@@ -119,7 +119,7 @@ const handleSolvePuzzle = () => {
 };
 const handleValidatePuzzle = () => {
     const solvedPuzzle = solveSudoku(emptyBoard);
-
+    let isPuzzleSolved = true;
     for (let rowIndex = 0; rowIndex < 9; rowIndex++) {
         for (let colIndex = 0; colIndex < 9; colIndex++) {
             const cell = grid[rowIndex][colIndex];

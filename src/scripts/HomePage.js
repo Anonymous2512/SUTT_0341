@@ -1,5 +1,6 @@
 import React from 'react';
-import './HomePage.css';
+import './HomePage.css'; // Import CSS file for styling
+
 function HomePage({ onStartGame }) {
     return (
         <div className="home-page">
@@ -12,7 +13,8 @@ function HomePage({ onStartGame }) {
                     <button id="start-game-btn" onClick={onStartGame}>Start Game</button>
                 </div>
                 <div className="column">
-                    <img src="/image1.png" alt="Image" />
+                    <img src="/image1.png" alt="Image" >
+                        </img>
                 </div>
             </div>
             
