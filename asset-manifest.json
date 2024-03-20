@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SUTT_0341/static/css/main.b2d3728f.css",
+    "main.js": "/SUTT_0341/static/js/main.510cab11.js",
+    "index.html": "/SUTT_0341/index.html",
+    "main.b2d3728f.css.map": "/SUTT_0341/static/css/main.b2d3728f.css.map",
+    "main.510cab11.js.map": "/SUTT_0341/static/js/main.510cab11.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2d3728f.css",
+    "static/js/main.510cab11.js"
+  ]
+}
