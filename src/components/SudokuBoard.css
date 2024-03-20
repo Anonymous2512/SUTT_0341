@@ -1,0 +1,147 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.sudoku-board {
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(9, 50px);
+    grid-template-rows: repeat(9, 50px);
+    gap: 1px;
+}
+.buttons-container {
+    display:inline;
+    position: absolute;
+    bottom: 50px; 
+    left: 0%; 
+    right:0%;
+}
+
+.buttons-container button {
+    margin-inline: 17px;
+    background-color: #70d5fe;
+    color:#000000; 
+    font-weight: bolder;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    background-color: white;
+}
+
+.cell:not([readonly]) {
+    background-color: #f1f7fe;
+    color: #000000;
+}
+.cell[readonly] {
+    background-color: #70d5fe; 
+    color: #00008b;
+}
+.display-window {
+    position: absolute;
+    top: calc(80% - 70px);
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin-bottom: 60px;
+    background-color:#0c0f13 ;
+    color:	#DC143C;
+    font-weight:bolder;
+    font-size: 35px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    .sudoku-board {
+        position: absolute;
+        top: 70%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(9, 40px); 
+        grid-template-rows: repeat(9, 40px); 
+        gap: 1px; 
+    }
+
+    .buttons-container {
+        bottom: 10%;
+        display:inline;
+        left: 0%; 
+        right:0%;
+    }
+
+    .buttons-container button {
+        margin-inline: 8px;
+        padding: 8px 16px;
+    }
+
+    .cell {
+        width: 40px; 
+    height: 40px; 
+    border: 2px solid black; 
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: white;
+    }
+
+    .display-window {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sudoku-board {
+        position: absolute;
+        top: 70%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: repeat(9, 30px); 
+        grid-template-rows: repeat(9, 30px);
+        gap: 1px;
+    }
+
+    .buttons-container {
+        bottom: 10%;
+        display:inline;
+        left: 0%; 
+        right:0%;
+    }
+
+    .buttons-container button {
+        margin-inline: 2px;
+        padding: 5px 8px;
+    }
+
+    .cell {
+        width: 30px; 
+    height: 30px; 
+    border: 2px solid black; 
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: white;
+    }
+
+    .display-window {
+        font-size: 3vw;
+    }
+}

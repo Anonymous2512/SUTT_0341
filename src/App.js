@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SudokuBoard from './components/SudokuBoard';
+import HomePage from './scripts/HomePage';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [gameStarted, setGameStarted] = useState(false);
+
+    const handleStartGame = () => {
+        console.log("Game started");
+        setGameStarted(true);
+    };
+
+    return (
+        <div className="app">
+            {!gameStarted ? <HomePage onStartGame={handleStartGame} /> : <SudokuBoard />}
+        </div>
+    );
 }
 
 export default App;
