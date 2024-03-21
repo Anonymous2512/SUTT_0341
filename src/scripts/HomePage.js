@@ -1,6 +1,10 @@
 import React from 'react';
 import './HomePage.css'; // Import CSS file for styling
-
+import img1 from '../images/image1.png';
+import rule1 from '../images/rule1.png';
+import rule2 from '../images/rule2.png';
+import rule3 from '../images/rule3.png';
+import rule4 from '../images/rule4.png';
 function HomePage({ onStartGame }) {
     return (
         <div className="home-page">
@@ -13,8 +17,8 @@ function HomePage({ onStartGame }) {
                     <button id="start-game-btn" onClick={onStartGame}>Start Game</button>
                 </div>
                 <div className="column">
-                    <img src="/image1.png" alt="Image" >
-                        </img>
+                    <img src={img1} />
+                      
                 </div>
             </div>
             
@@ -24,23 +28,23 @@ function HomePage({ onStartGame }) {
            
             <div className="row">
             <div className="procol">
-            <img src="/rule1.png" />
+            <img src={rule1} />
             <p>Each row must contain the numbers<br></br> from 1 to 9, without repetitions</p>
            
             </div>
             <div className="procol">
-            <img src="/rule2.png" />
+            <img src={rule2} />
            <p>Each column must contain the numbers<br></br> from1 to 9, without repetitions</p>
             </div>
             </div>
             <div className="row">
             <div className="procol">
-            <img src="/rule3.png" />
+            <img src={rule3} />
             <p>The digits can only occur once per nonet</p>
            
             </div>
             <div className="procol">
-            <img src="/rule4.png" />
+            <img src={rule4} />
            <p>The sum of every single row, column<br></br>and nonet must equal 45</p>
             </div>
             </div>
