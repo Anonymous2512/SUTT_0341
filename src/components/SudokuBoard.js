@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useMemo } from 'react';
 import './SudokuBoard.css';
 
 function SudokuBoard() {
@@ -57,18 +57,19 @@ function SudokuBoard() {
         };
         
         const emptyBoard = Array.from({ length: 9 }, () => Array(9).fill(null));
-    const generateRandomPuzzle = () => {
+  
 
-        const solvedPuzzle = solveSudoku(emptyBoard);
+        const solvedPuzzle = useMemo(() => solveSudoku(emptyBoard),[]);
+    const puzzle = useMemo(() => solvedPuzzle.map(row => row.map(cell => Math.random() > 0.5 ? cell : null)), [solvedPuzzle]);
+      
+    
         
        
-        const puzzle = solvedPuzzle.map(row => row.map(cell => Math.random() > 0.5 ? cell : null));
-
-        return puzzle;
-    };
+   
 
     
-    const initialGrid = generateRandomPuzzle().map(row => row.map(cell => ({ value: cell, prefilled: cell !== null })));
+    const initialGrid = puzzle.map(row => row.map(cell => ({ value: cell, prefilled: cell !== null })));
+  
 
     const [grid, setGrid] = useState(initialGrid);
     const [display, setDisplay] = useState('');
@@ -118,7 +119,7 @@ const handleSolvePuzzle = () => {
     }
 };
 const handleValidatePuzzle = () => {
-    const solvedPuzzle = solveSudoku(emptyBoard);
+  
     let isPuzzleSolved = true;
     for (let rowIndex = 0; rowIndex < 9; rowIndex++) {
         for (let colIndex = 0; colIndex < 9; colIndex++) {
